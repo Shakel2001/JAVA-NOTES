@@ -1,0 +1,47 @@
+Threads in Java - Study Notes
+Basics
+A Thread is a lightweight process.
+
+Java supports multithreading: executing multiple threads simultaneously.
+
+The main class to work with threads is from the java.lang package.
+
+Sequential Programming
+Executes instructions one after another.
+
+Not efficient for concurrent tasks like file copy, sorting, etc.
+
+Creating Threads in Java
+Two Ways:
+By Extending the Thread Class
+
+Override the run() method.
+
+Call the start() method to begin thread execution.
+
+java
+Copy
+Edit
+class MyThread extends Thread {
+    public void run() {
+        // thread task
+    }
+}
+MyThread t = new MyThread();
+t.start();
+By Implementing the Runnable Interface
+
+Implement the run() method.
+
+Pass the object to a Thread instance and call start().
+
+java
+Copy
+Edit
+class MyRunnable implements Runnable {
+    public void run() {
+        // thread task
+    }
+}
+Thread t = new Thread(new MyRunnable());
+t.start();
